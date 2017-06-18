@@ -36,6 +36,10 @@ public class Sequence {
         @Override
         public void next() {if (i < items.length) i++;}
 
+        public Sequence outer(){
+            return Sequence.this;
+        }
+
 
     }
 
@@ -53,6 +57,9 @@ public class Sequence {
             System.out.print(selector.current() + " ");
             selector.next();
         }
+// only for exer4: create a reference to outer class object.
+        Sequence.SequenceSelector ss = sequence.new SequenceSelector();
+        System.out.println(sequence == ss.outer());
 
     }
 }
