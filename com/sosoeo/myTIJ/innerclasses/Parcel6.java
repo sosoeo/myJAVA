@@ -2,6 +2,8 @@ package com.sosoeo.myTIJ.innerclasses;
 
 /**
  * Created by sky on 17-6-5.
+ * 1. 在任意作用域定义内部类
+ * 2. 作用域之外不可用
  */
 public class Parcel6 {
     private void internalTracking(boolean b){
