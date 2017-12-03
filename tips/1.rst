@@ -1,0 +1,37 @@
+在jsp中正确地使用html语言中的link标签
+======================================================================
+
+link标签的html基本语法
+----------------------------------------------------------------------
+link标签的形式为：<link rel="" href="">（注意没有结束标签），类似这样：
+
+<link rel="stylesheet" href="/screen.css">
+
+
+在jsp中，如果静态资源的位置在如下路径中：
+mywebproject/src/main/webapp/resources/assets/brand/favicon.ico
+
+可能会写成：
+
+<link rel="icon" href="resources/assets/brand/favicon.ico">
+
+这样的相对路径，有时会产生错误。
+
+
+在JSP中如何正确使用
+----------------------------------------------------------------------
+在jsp中有2种方法确保link的正确：
+
+1. 使用JSP EL(expression Language) 的隐式对象，像这样：
+
+
+<link rel="icon" href="${pageContext.request.contextPath}resources/assets/brand/favicon.ico">
+
+
+2. 使用JSTL 的标签 <c:url>,像这样：
+
+<link rel="icon" href="<c:url value = "resources/assets/brand/favicon.ico" />">
+
+end
+----------------------------------------------------------------------
+2017.12.03 [checked]
